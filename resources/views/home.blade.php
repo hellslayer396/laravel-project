@@ -24,13 +24,20 @@
                 </form>
 
                 @if (count($todolists))
-                    <ul>
+                    <ul class="list-group list-group-flush mt-3">
                         @foreach($todolists as $todolists)
                             <li class="list-group-item">
-                                
+                                <form action="{{route('destroy', $todolist->id)}}" method = "POST">
+                                    {{$todolist->content}}
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-link btn-sm float-end"><i class="fas fa-trash"></i></button>
+                                </form>
                             </li>
                         @endforeach
                     </ul>
+                    @else
+                    <p class="text-center mt-3">No tasks!</p>
                 @endif
             </div>
         </div>
