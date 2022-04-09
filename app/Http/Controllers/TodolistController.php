@@ -23,9 +23,9 @@ class TodolistController extends Controller
         return back();
     }
 
-    public function destroy(Todolist $todolists)
+    public function destroy(Todolist $todolist)
     {
-        $todolists->delete();
+        $todolist->delete();
         return back();
     }
 }
