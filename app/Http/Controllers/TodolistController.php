@@ -10,7 +10,7 @@ class TodolistController extends Controller
     public function index()
     {
         $todolists = Todolist::all();
-        return view('home', compact('todolist'));
+        return view('home', compact('todolists'));
     }
 
     public function store(Request $request)
@@ -23,9 +23,9 @@ class TodolistController extends Controller
         return back();
     }
 
-    public function destroy(Todolist $todolist)
+    public function destroy(Todolist $todolists)
     {
-        $todolist->delete();
+        $todolists->delete();
         return back();
     }
 }

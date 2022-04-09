@@ -25,7 +25,7 @@
 
                 @if (count($todolists))
                     <ul class="list-group list-group-flush mt-3">
-                        @foreach($todolists as $todolists)
+                        @foreach($todolists as $todolist)
                             <li class="list-group-item">
                                 <form action="{{route('destroy', $todolist->id)}}" method = "POST">
                                     {{$todolist->content}}
